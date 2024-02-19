@@ -11,14 +11,7 @@
     scroll-behavior:smooth;
     font-family:cursive;
 }
-/*
-:root{
 
-    --bg-color:black;
-    --second-bg-color:#112e42;
-    --text-color:#ededed;
-    --main-color:#00abf0;
-}*/
 
 :root{
     
@@ -30,7 +23,7 @@
 
 html{
     font-size:62.5%;
-    overflow:hidden;
+   
 }
 
 body{
@@ -57,6 +50,7 @@ body{
     font-weight: 600;
 }
 
+
 .navbar a {
      font-size: 1.7rem;
      color:var(--text-color);
@@ -81,6 +75,21 @@ body{
 section{
     min-height:100vh;
     padding:10rem 9% 2rem;
+    /*add border after every line*/
+    position: relative; 
+}
+
+
+
+section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Adjust width as needed */
+    height: 2px; /* Adjust thickness as needed */
+    background-color: var(--main-color); /* Choose your desired color */
 }
 
 
@@ -89,10 +98,10 @@ section{
     display:flex;
     align-items: center;
     padding: 0 9%;
-   /* background: url('ps2.png') no-repeat;*/
+   
     background: url('tech.png') no-repeat;
     background-size:auto;
-    /*background-size:auto; */
+  
     background-position:right;
     margin-right: 20px;
 }
@@ -110,7 +119,7 @@ section{
 
 
 .home-content h1 span{
-    color: var(--text-color);
+    color: var(--main-color);
 }
 
 
@@ -131,7 +140,48 @@ section{
 .home-content p{
     font-size:1.6rem;
     margin:2rem 0 4rem;
+
 }
+
+
+.text-animate h3 {
+    display: inline-block; /* Display spans in a block container */
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+    position: relative; /* Set position relative for cursor positioning */
+}
+
+.text-animate h3 span {
+    color: silver;
+    opacity: 0;
+    white-space: nowrap; /* Prevent spans from wrapping */
+}
+
+.text-animate h3 {
+    display: flex; /* Display spans in a flex container */
+}
+
+.text-animate h3 span {
+    opacity: 0;
+    white-space: nowrap; /* Prevent spans from wrapping */
+}
+
+.text-animate h3 span.typing {
+    opacity: 1;
+    animation: typing-animation 0.5s forwards;
+}
+
+@keyframes typing-animation {
+    from {
+        width: 0;
+    }
+    to {
+        width: auto;
+    }
+}
+
+
+
+
 
 
 .btn-box{
